@@ -9,7 +9,8 @@ ${MyText}       hello from express
 GET BOOTCAMPS
     Create session      GETBOOTCAMPS      ${Base_URL}
     ${resp}=    Get Request     GETBOOTCAMPS    /
-    Should Contain      ${resp.text}    ${MyText}        
+    Should Contain      ${resp.text}    ${MyText}     
+    Should Be Equal     ${200}      ${resp.status_code}   
 
 *** Test Cases ***
 TC_Get_all_bootcamps
